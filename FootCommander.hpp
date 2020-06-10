@@ -11,12 +11,10 @@
 
 using namespace std;
 
-class FootCommander : public Soldier {
+class FootCommander : public  public FootSoldier {
 public:
     FootCommander(int num_p) :Soldier(150,20,num_p,150) {}
-
-    void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
-
+    void fight(Board &board,std::pair<int, int> placeOfSoldier) override ;
 };
 
 

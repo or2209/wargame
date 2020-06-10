@@ -1,7 +1,8 @@
 #include "Board.hpp"
-
+#include "Soldier.hpp"
+#include "FootSoldier.hpp"
 using namespace std;
-
+#include <iostream>
 namespace WarGame {
     Soldier *&Board::operator[](std::pair<int, int> location) {
         return board[location.first][location.second];
@@ -46,6 +47,27 @@ namespace WarGame {
         board[dest.first][dest.second] = src;
         board[source.first][source.second] = nullptr;
         src->Fight(board, dest);
+    }
+
+    void Board::print_board() {
+        for (int i = 0; i < this->board.size(); i++) {
+            for (int j = 0; j < this->board[0].size(); j++) {
+                if (this->board[i][j])  //!=NULL
+
+                    cout <<"   "<<this->board[i][j]->num_player <<" "<< this->board[i][j]->health<<"  " ;
+                else
+                    cout << "  ------  " ;
+
+            }
+            cout<<"     "<<endl;
+
+        }
+        cout<<"   "<<endl;
+        cout<<"   "<<endl;
+
+        cout<<"   "<<endl;
+        cout<<"   "<<endl;
+
     }
 
     bool Board::has_soldiers(uint player_number) const {

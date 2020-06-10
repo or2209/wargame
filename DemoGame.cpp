@@ -59,7 +59,6 @@ namespace WarGame {
                     delete soldier;
             }
         }
-        cout<<"twito"<<endl;
     }
 
 }

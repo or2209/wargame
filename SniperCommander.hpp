@@ -9,10 +9,9 @@
 #include "Sniper.hpp"
 #include <vector>
 using  namespace std;
-class SniperCommander:public Soldier{
+class SniperCommander:public Sniper{
 public:
-    SniperCommander(int num_p):Soldier(120,100,num_p,120){
-    }
+    SniperCommander(int num_p):Soldier(120,100,num_p,120){}
      void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 
     };

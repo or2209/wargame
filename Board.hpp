@@ -12,6 +12,7 @@
 #include <vector>
 #include <stdexcept>
 #include "Soldier.hpp"
+
 //#include "DemoGame.hpp"
 
 
@@ -26,8 +27,6 @@ public:
 
     Board(uint numRows, uint numCols) :
         board(numRows, std::vector<Soldier*>(numCols, nullptr)){}
-
-    void chack_type_AND_action(Soldier *&pSoldier, std::pair<int, int> p);
 
         // operator for putting soldiers on the game-board during initialization.
     Soldier*& operator[](std::pair<int,int> location);
@@ -50,7 +49,7 @@ public:
 
     // returns true iff the board contains one or more soldiers of the given player.
     bool has_soldiers(uint player_number) const;
-    void printboard();
+    void print_board();
 //    ~Board()
 //    {
 //      for (auto row: board) {
